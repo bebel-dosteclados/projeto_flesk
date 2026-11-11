@@ -5,41 +5,31 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("index.html", titulo="index.html")
-
-@app.route("/ajuda")
-def ajuda():
-    return "página de ajuda"
-
-@app.route("/contato")
-def contato():
-    return "página de contato"
-
-@app.route("/ola/ <nome>")
-def ola(nome):
-    return f"olá, {nome}!"
-
-@app.route("/dobro/<int:numero>")
-def dobro(numero):
-    return f"O dobro de {numero} é {numero * 2}"
+    return render_template("index.html", titulo="Programação Web")
 
 @app.route("/sobre")
 def sobre():
     return render_template("sobre.html")
 
-@app.route("/perfil")
-def perfil():
-    return render_template(
-        "perfil.html", nome="Ana", curso="Informática")
 
-@app.route("/nota/<int:nota>")
-def nota(nota):
-    return render_template("nota.html", nota=nota)
+@app.route("/ola/<nome>")
+def ola(nome):
+    return render_template("ola.html",nome=nome)
 
-@app.route("/frutas")
-def frutas():
-    lista = ["Maçã", "Banana", "Caju"]
-    return render_template("frutas.html", frutas=lista)
+@app.route("/idade/<int:idade>")
+def idade(idade):
+    return render_template("idade.html",idade=idade)
+    
+@app.route("/diciplinas")
+def diciplinas():
+    lista = ["Programação Web" , "Potuguês" ,  "Historia"]
+    return render_template("diciplina.html",diciplina=lista)
+
+@app.route("/tabuada/<int:n>")
+def tabuada(n):
+    return render_template("tabuada.html", n=n)
+    
+
 
 
 
