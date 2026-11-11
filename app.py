@@ -23,7 +23,7 @@ def idade(idade):
 @app.route("/diciplinas")
 def diciplinas():
     lista = ["Programação Web" , "Potuguês" ,  "Historia"]
-    return render_template("diciplina.html",diciplina=lista)
+    return render_template("diciplinas.html",diciplinas=lista)
 
 @app.route("/tabuada/<int:n>")
 def tabuada(n):
