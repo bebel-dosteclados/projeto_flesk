@@ -20,10 +20,10 @@ def ola(nome):
 def idade(idade):
     return render_template("idade.html",idade=idade)
     
-@app.route("/diciplinas")
-def diciplinas():
+@app.route("/disciplinas")
+def disciplinas():
     lista = ["Programação Web" , "Potuguês" ,  "Historia"]
-    return render_template("diciplinas.html",diciplinas=lista)
+    return render_template("disciplinas.html",disciplinas=lista)
 
 @app.route("/tabuada/<int:n>")
 def tabuada(n):
