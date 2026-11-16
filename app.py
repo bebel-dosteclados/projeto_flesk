@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 
 app = Flask(__name__)
+import aluno_service
 
 
 @app.route("/")
@@ -32,7 +33,11 @@ def tabuada(n):
 @app.route("/tabuadas")
 def tabuadas():
     return render_template("tabuadas.html")
-    
+
+@app.route("/aluno/")
+def listar_alunos():
+    alunos = aluno_service.listar()
+    return render_template("aluno/listar.html", alunos=alunos)
 
 
 
