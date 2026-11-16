@@ -28,6 +28,10 @@ def disciplinas():
 @app.route("/tabuada/<int:n>")
 def tabuada(n):
     return render_template("tabuada.html", n=n)
+
+@app.route("/tabuadas")
+def tabuadas():
+    return render_template("tabuadas.html")
     
 
 
